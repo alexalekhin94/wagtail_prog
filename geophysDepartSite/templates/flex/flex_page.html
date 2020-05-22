@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags%}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+{{self.subtitle}} is subtitle
+
+<div class="container" style="outline:2px red solid">
+
+{% for block in page.content %}
+    {% include_block block %}
+{% endfor%}
+
+</div>
+
+
+{% endblock%}

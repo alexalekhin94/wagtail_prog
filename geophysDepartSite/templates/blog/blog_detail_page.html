@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+{{self.custom_title}}
+
+
+{% image self.blog_image fill-350x250 as img %}
+
+{% for block in self.content %}
+    {% include_block block %}
+{% endfor%}
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% load wagtailimages_tags %}
+
+<div class="container">
+    <h1>{{self.title}}</h1>
+
+    <div class="card-cont row" style="display: flex; outline:12px red solid">
+
+        {% for card in self.cards %}
+        {% image card.image fill-350x250 as img %}
+
+
+        <div class="cardq col col-sm-6 col-md-4">
+            <img src="{{img.url}}" class="card-img-top" alt="{{img.alt}}">
+            <div class="card-body">
+                <h5 class="card-title">{{self.title}}</h5>
+                <p class="card-text">{{self.text}}</p>
+                <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
